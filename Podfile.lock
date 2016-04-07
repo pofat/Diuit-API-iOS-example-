@@ -1,0 +1,24 @@
+PODS:
+  - DUMessaging (1.0.0):
+    - Socket.IO-Client-Swift (~> 5.3.1)
+  - SDWebImage (3.7.5):
+    - SDWebImage/Core (= 3.7.5)
+  - SDWebImage/Core (3.7.5)
+  - Socket.IO-Client-Swift (5.3.3)
+  - SVProgressHUD (2.0.3)
+  - TTTAttributedLabel (1.13.4)
+
+DEPENDENCIES:
+  - DUMessaging
+  - SDWebImage
+  - SVProgressHUD
+  - TTTAttributedLabel
+
+SPEC CHECKSUMS:
+  DUMessaging: 6ebb751eefa25b80b115510bc69e2858df6fc0ee
+  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  Socket.IO-Client-Swift: debd5c155e4299e33854fbd26bfeaafcbc6df6c6
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  TTTAttributedLabel: 0a2ac7b2dd726d32a070dafb01446026b11e624f
+
+COCOAPODS: 0.39.0
