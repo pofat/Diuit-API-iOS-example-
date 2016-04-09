@@ -8,6 +8,7 @@
 
 import UIKit
 import DUMessaging
+import SVProgressHUD
 
 class ChatroomSettingVC: UIViewController {
 
@@ -47,13 +48,20 @@ class ChatroomSettingVC: UIViewController {
     }
 
     @IBAction func leaveRoom() {
+        SVProgressHUD.showWithStatus("Loading...")
         self.chat.leaveOnCompletion() { error, message in
-            if error == nil {
-                let vcs = self.navigationController?.viewControllers
-                for vc in vcs! {
-                    if vc.isKindOfClass(ChatroomListVC) {
-                        self.navigationController?.popToViewController(vc, animated: true)
-                    }
+            guard error == nil else {
+                SVProgressHUD.showErrorWithStatus("Leave chat room failed")
+                print(error?.localizedDescription)
+                return
+            }
+            
+            SVProgressHUD.dismiss()
+            let vcs = self.navigationController?.viewControllers
+            for vc in vcs! {
+                if vc.isKindOfClass(ChatroomListVC) {
+                    self.navigationController?.popToViewController(vc, animated: true)
+                    break
                 }
             }
         }
@@ -82,6 +90,7 @@ extension ChatroomSettingVC: UITableViewDataSource {
                 if error != nil {
                     NSLog("error kicking due to : \(error!.localizedDescription)")
                 } else {
+                    self.chat.removeMemberWith(self.serials[indexPath!.row])
                     self.serials.removeAtIndex(indexPath!.row)
                     self.tableView.reloadData()
                 }

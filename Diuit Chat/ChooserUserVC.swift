@@ -38,6 +38,7 @@ class ChooserUserVC: UIViewController {
             DUMessaging.createChatroomWith(userSerials) { error, chat in
                 guard let _:DUChat = chat where error == nil else {
                     SVProgressHUD.showErrorWithStatus("Create chat room failed")
+                    SVProgressHUD.dismissWithDelay(NSTimeInterval(1.0))
                     print("Create chat error : \(error!.localizedDescription)")
                     return
                 }
@@ -48,6 +49,25 @@ class ChooserUserVC: UIViewController {
             }
         } else {
             // do join chat
+            guard let _:Int = Int(self.chatRoomId.text!) where self.chatRoomId.text != "" else {
+                SVProgressHUD.showErrorWithStatus("Not a valid chat room id")
+                return
+            }
+            
+            SVProgressHUD.showWithStatus("Loading...")
+            let chatRoomId:Int = Int(self.chatRoomId.text!)!
+            DUMessaging.joinChatroomWithId(chatRoomId) { error, chat in
+                guard let _:DUChat = chat where error == nil else {
+                    SVProgressHUD.showErrorWithStatus("Join chat room failed")
+                    SVProgressHUD.dismissWithDelay(NSTimeInterval(1.0))
+                    print(error?.localizedDescription)
+                    return
+                }
+                
+                SVProgressHUD.dismiss()
+                User.chats.append(chat!)
+                self.navigationController?.popViewControllerAnimated(true)
+            }
         }
     }
     
