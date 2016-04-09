@@ -19,7 +19,6 @@ class ChooserUserVC: UIViewController {
     private var userArray:[String: String] = [String:String]()
     private var isCreateChat = true
     
-    
     @IBAction func createOrJoinChat() {
         if isCreateChat {
             // do create chat
@@ -35,6 +34,7 @@ class ChooserUserVC: UIViewController {
                 }
             }
             
+            SVProgressHUD.showWithStatus("Loading...")
             DUMessaging.createChatroomWith(userSerials) { error, chat in
                 guard let _:DUChat = chat where error == nil else {
                     SVProgressHUD.showErrorWithStatus("Create chat room failed")
@@ -42,7 +42,9 @@ class ChooserUserVC: UIViewController {
                     return
                 }
                 
+                SVProgressHUD.dismiss()
                 User.chats.append(chat!)
+                self.navigationController?.popViewControllerAnimated(true)
             }
         } else {
             // do join chat

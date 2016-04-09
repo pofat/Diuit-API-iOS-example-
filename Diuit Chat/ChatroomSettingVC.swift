@@ -10,7 +10,7 @@ import UIKit
 import DUMessaging
 
 class ChatroomSettingVC: UIViewController {
-/*
+
     @IBOutlet var idLabel: UILabel!
     @IBOutlet var roomNameText: UITextField!
     @IBOutlet var tableView: UITableView!
@@ -70,7 +70,7 @@ extension ChatroomSettingVC: UITableViewDataSource {
         let serialLabel = c.viewWithTag(1) as! UILabel
         let kickBtn = c.viewWithTag(2) as! UIButton
         serialLabel.text = self.serials[indexPath.row]
-        kickBtn.addTarget(self, action: "kick:", forControlEvents: .TouchUpInside)
+        kickBtn.addTarget(self, action: #selector(ChatroomSettingVC.kick(_:)), forControlEvents: .TouchUpInside)
         return c
     }
     
@@ -95,5 +95,5 @@ extension ChatroomSettingVC: UITableViewDelegate {
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         NSLog("select \(indexPath.row) row")
     }
- */
+
 }

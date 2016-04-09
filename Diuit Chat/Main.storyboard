@@ -689,8 +689,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="3pU-4c-qwg" id="qCE-fK-78a"/>
-                                    <outlet property="delegate" destination="3pU-4c-qwg" id="Fre-3h-1PU"/>
+                                    <outlet property="dataSource" destination="3pU-4c-qwg" id="tVY-np-k6k"/>
+                                    <outlet property="delegate" destination="3pU-4c-qwg" id="WPZ-Kd-o8Z"/>
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Members:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqN-7E-SbT">
@@ -731,9 +731,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="idLabel" destination="WVj-pi-yAK" id="xZs-dA-Is1"/>
-                        <outlet property="roomNameText" destination="AFT-i4-VwL" id="hz6-le-llG"/>
-                        <outlet property="tableView" destination="o8g-Gg-bkL" id="7ZJ-hi-CrI"/>
+                        <outlet property="idLabel" destination="WVj-pi-yAK" id="5iu-cy-K7H"/>
+                        <outlet property="roomNameText" destination="AFT-i4-VwL" id="J0V-fD-Je0"/>
+                        <outlet property="tableView" destination="o8g-Gg-bkL" id="fUs-sQ-e3f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fKa-FM-mM1" userLabel="First Responder" sceneMemberID="firstResponder"/>

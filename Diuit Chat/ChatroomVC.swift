@@ -82,32 +82,49 @@ class ChatroomVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     // MARK: UIImagePicker Delegate
     func imagePickerController(picker: UIImagePickerController,
         didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-            NSLog(String(info))
-            let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-            picker.dismissViewControllerAnimated(true, completion: {
-                () -> Void in
-            })
-        /*
-            self.chat.sendImage(image, pushMessag: "you have image message", pushPayload:["foo":"bar"]) { error, message in
-                if error != nil {
-                    let alert = UIAlertController(title: "Info", message: error!.localizedDescription, preferredStyle: .Alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-                    self.presentViewController(alert, animated: true, completion: nil)
-                } else {
-                    NSLog("image message sent")
-                }
+        
+        let imageURL = info[UIImagePickerControllerReferenceURL] as! NSURL
+        var meta:[String: AnyObject] = [String:AnyObject]()
+        if let imageName = imageURL.getAssetFullFileName() {
+            print("choose image name: \(imageName)")
+            meta["name"] = imageName
+        }
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        picker.dismissViewControllerAnimated(true, completion: {
+            () -> Void in
+        })
+        self.chat.sendImage(image, meta: meta, pushMessage: "You've got an image message", pushPayload: nil, badge: "increment") { error, message in
+            guard let _:DUMessage = message where error == nil else {
+                print("failed to send image message:\(error!.localizedDescription)")
+                return
             }
- */
             
+            print("image message #\(message!.id) sent")
+        }
     }
 
     // MARK: Life Cycle
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // register message receiver
         if let chatId = self.chat?.id {
             NSNotificationCenter.defaultCenter().addObserverForName("messageReceived.\(chatId)", object: nil, queue: NSOperationQueue.mainQueue()) { notif in
+                guard let _:DUMessage = notif.userInfo!["message"] as? DUMessage else {
+                    print("callback return error type")
+                    return
+                }
+                
                 let message = notif.userInfo!["message"] as! DUMessage
-                NSLog("Got new message #\(message.id)")
+                NSLog("Got new message #\(message.id) in chat room \(self.chat.id)")
                 self.chat.lastMessage = message
                 self.messages.insert(message, atIndex: 0)
                 self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: .Automatic);
@@ -126,22 +143,14 @@ class ChatroomVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                 }
             }
         }
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44
         tableView.allowsSelection = false
         
         self.chat.listMessagesBefore() { error, messages in
             NSLog("Exited, \(messages)")
-            if error != nil {
+            guard let _:[DUMessage] = messages where error == nil else {
                 NSLog("Failed to list messages due to : \(error!.localizedDescription)")
                 return
             }
@@ -153,7 +162,7 @@ class ChatroomVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.destinationViewController.isKindOfClass(ChatroomSettingVC) {
             let vc = segue.destinationViewController as! ChatroomSettingVC
-            //vc.chat = chat
+            vc.chat = chat
         }
     }
 }

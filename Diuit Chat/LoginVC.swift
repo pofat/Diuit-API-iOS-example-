@@ -37,8 +37,8 @@ class LoginVC: UIViewController {
         }
         
         SVProgressHUD.showWithStatus("Loading...")
-        let url = "/auth/login"
-        let params = "username=\(self.userName!.text!)&password=\(self.password!.text!)&deviceSerial=\(UIDevice.currentDevice().identifierForVendor!.UUIDString)&platform=ios_sandbox"
+        let url = "/auth/signin"
+        let params = "username=\(self.userName!.text!)&password=\(self.password!.text!)&deviceSerial=\(UIDevice.currentDevice().identifierForVendor!.UUIDString)&platform=\(Utility.devicePlatform)"
         Utility.doPostWith(url, params: params) { error, data in
             guard let _:NSData = data where error == nil else {
                 SVProgressHUD.showErrorWithStatus("Login failed")
@@ -63,9 +63,10 @@ class LoginVC: UIViewController {
                         return
                     }
                     
-                    User.currentEmail = json["userEmail"] as! String
+                    let userDict = json["user"] as! [String:AnyObject]
+                    User.currentEmail = userDict["email"] as! String
                     User.currentUsername = self.userName!.text!
-                    User.currentUserId = json["userId"] as! Int
+                    User.currentUserId = userDict["id"] as! Int
                     DUMessaging.listChatrooms() { error, chats in
                         guard let _:[DUChat] = chats where error == nil else {
                             SVProgressHUD.showErrorWithStatus("Login failed")

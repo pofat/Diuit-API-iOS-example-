@@ -11,7 +11,7 @@ import UIKit
 public typealias HTTPRequestCallback = (NSError?, NSData?) -> Void
 
 class Utility: NSObject {
-    
+    static let devicePlatform: String = "ios_sandbox"
     private static let _serverUrl:String = "https://blueberry-pie-56453.herokuapp.com"
     
     // MARK: getters
@@ -55,15 +55,9 @@ class Utility: NSObject {
             NSForegroundColorAttributeName: UIColor.whiteColor()
             ]
         
+        // TODO: make text center
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
-        
-        //let textSize = text.sizeWithAttributes([NSFontAttributeName:textFontAttributes])
-        //print(" text size at \(textSize.width), \(textSize.height)")
-        print("draw bounds: \(size.width), \(size.height)")
-        //let drawPoint = CGPointMake(size.width/2 - textSize.width/2, size.height/2 - textSize.height/2)
-        //print("draw text at \(drawPoint.x), \(drawPoint.y)")
         text.drawAtPoint(CGPointMake(size.width/2 - 10, size.height/2 - 15), withAttributes: textFontAttributes)
-        //text.drawInRect(textRect, withAttributes: textFontAttributes)
         
         let image:UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -73,6 +67,7 @@ class Utility: NSObject {
 
 }
 
+// MARK: String extension
 extension String {
     
     subscript (i: Int) -> Character {
@@ -87,5 +82,39 @@ extension String {
         let start = startIndex.advancedBy(r.startIndex)
         let end = start.advancedBy(r.endIndex - r.startIndex)
         return self[Range(start ..< end)]
+    }
+}
+
+// MARK: NSURL extension
+extension NSURL {
+    func getAssetFullFileName() -> String? {
+        guard self.scheme == "assets-library" else {
+            return nil
+        }
+        let absoluePath = self.absoluteString
+        let idRange = absoluePath.rangeOfString("id=")
+        let extRange = absoluePath.rangeOfString("&ext=")
+        let fileName = absoluePath.substringWithRange(idRange!.endIndex..<extRange!.startIndex)
+        let ext = absoluePath.substringWithRange(extRange!.endIndex..<absoluePath.endIndex)
+        return fileName+"."+ext
+    }
+    
+    func getAssetFileExt() -> String? {
+        guard self.scheme == "assets-library" else {
+            return nil
+        }
+        let absoluePath = self.absoluteString
+        let extRange = absoluePath.rangeOfString("&ext=")
+        return absoluePath.substringWithRange(extRange!.endIndex..<absoluePath.endIndex)
+    }
+    
+    func getAssetFileName() -> String? {
+        guard self.scheme == "assets-library" else {
+            return nil
+        }
+        let absoluePath = self.absoluteString
+        let idRange = absoluePath.rangeOfString("id=")
+        let extRange = absoluePath.rangeOfString("&ext=")
+        return absoluePath.substringWithRange(idRange!.endIndex..<extRange!.startIndex)
     }
 }
