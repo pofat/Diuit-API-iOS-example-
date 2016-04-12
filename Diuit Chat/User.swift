@@ -15,4 +15,14 @@ class User {
     static var currentUsername: String = ""
     
     static var chats: [DUChat] = []
+    
+    static func refreshChats() {
+        DUMessaging.listChatrooms() { error, chats in
+            guard let _:[DUChat] = chats where error == nil else {
+                print(error!.localizedDescription)
+                return
+            }
+            self.chats = chats!
+        }
+    }
 }

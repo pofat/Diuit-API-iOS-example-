@@ -10,6 +10,8 @@ import UIKit
 import DUMessaging
 
 class ChatroomListVC: UIViewController {
+    var requireRefresh:Bool = false
+
     @IBOutlet var tableView: UITableView!
     
     func registerMessageObserver() {
@@ -53,7 +55,8 @@ class ChatroomListVC: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showChatroomSegue" {
-            let vc = segue.destinationViewController as! ChatroomVC
+            //let vc = segue.destinationViewController as! ChatroomVC
+            let vc = segue.destinationViewController as! ChatMessagesVC
             vc.chat = User.chats[(self.tableView?.indexPathForSelectedRow?.row)!]
         }
     }
@@ -64,8 +67,11 @@ class ChatroomListVC: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.tableView.reloadData()
-        
+        if requireRefresh {
+            
+        } else {
+            self.tableView.reloadData()
+        }
     }
 
     override func viewWillDisappear(animated: Bool) {

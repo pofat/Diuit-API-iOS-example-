@@ -8,6 +8,7 @@ target 'Diuit Chat' do
     pod 'SDWebImage'
     pod 'SVProgressHUD'
     pod 'TTTAttributedLabel'
+    pod 'JSQMessagesViewController'
 end
 
 target 'Diuit ChatTests' do

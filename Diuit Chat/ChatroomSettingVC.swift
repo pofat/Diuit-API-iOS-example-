@@ -57,6 +57,7 @@ class ChatroomSettingVC: UIViewController {
             }
             
             SVProgressHUD.dismiss()
+            User.chats.removeAtIndex(User.chats.indexOf(self.chat)!)
             let vcs = self.navigationController?.viewControllers
             for vc in vcs! {
                 if vc.isKindOfClass(ChatroomListVC) {
