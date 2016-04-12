@@ -1,6 +1,9 @@
 PODS:
   - DUMessaging (1.0.0):
     - Socket.IO-Client-Swift (~> 5.3.1)
+  - JSQMessagesViewController (7.2.0):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
@@ -10,12 +13,15 @@ PODS:
 
 DEPENDENCIES:
   - DUMessaging
+  - JSQMessagesViewController
   - SDWebImage
   - SVProgressHUD
   - TTTAttributedLabel
 
 SPEC CHECKSUMS:
   DUMessaging: 6ebb751eefa25b80b115510bc69e2858df6fc0ee
+  JSQMessagesViewController: 73cab48aa92fc2d512f3b6724f3425cc47a19eb5
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   Socket.IO-Client-Swift: debd5c155e4299e33854fbd26bfeaafcbc6df6c6
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4

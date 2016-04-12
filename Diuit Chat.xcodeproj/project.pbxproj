@@ -1,1049 +1,510 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>2857D2F89FEF2C6F7692035A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Diuit Chat.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-Diuit Chat/Pods-Diuit Chat.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3B7E08659019D1EF1E246A30</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Diuit Chat/Pods-Diuit Chat-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>415E58E4B38A7002202FEE60</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A858FB55BFAB3214C419BF11</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5F40D2DAE3ADAD66B51CA175</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Diuit Chat.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-Diuit Chat/Pods-Diuit Chat.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>624C757A730750ABA6098273</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>2857D2F89FEF2C6F7692035A</string>
-				<string>5F40D2DAE3ADAD66B51CA175</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>69610ED904FC5FAB05D32D43</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A858FB55BFAB3214C419BF11</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>85A53CC40558BE1FAE530179</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Diuit Chat/Pods-Diuit Chat-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>91E4FFFD626D47F32A997E11</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>A858FB55BFAB3214C419BF11</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_Diuit_Chat.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>FA04E71C1CB6AA0E001F847F</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>FA04E7271CB6AA0E001F847F</string>
-				<string>FA04E73C1CB6AA0F001F847F</string>
-				<string>FA04E7261CB6AA0E001F847F</string>
-				<string>624C757A730750ABA6098273</string>
-				<string>69610ED904FC5FAB05D32D43</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FA04E71D1CB6AA0E001F847F</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastSwiftUpdateCheck</key>
-				<string>0730</string>
-				<key>LastUpgradeCheck</key>
-				<string>0730</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>duolC</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>FA04E7241CB6AA0E001F847F</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-					</dict>
-					<key>FA04E7381CB6AA0F001F847F</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-						<key>TestTargetID</key>
-						<string>FA04E7241CB6AA0E001F847F</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>FA04E7201CB6AA0E001F847F</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-				<string>Base</string>
-			</array>
-			<key>mainGroup</key>
-			<string>FA04E71C1CB6AA0E001F847F</string>
-			<key>productRefGroup</key>
-			<string>FA04E7261CB6AA0E001F847F</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>FA04E7241CB6AA0E001F847F</string>
-				<string>FA04E7381CB6AA0F001F847F</string>
-			</array>
-		</dict>
-		<key>FA04E7201CB6AA0E001F847F</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>FA04E7401CB6AA0F001F847F</string>
-				<string>FA04E7411CB6AA0F001F847F</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>FA04E7211CB6AA0E001F847F</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>FA04E7521CB6AABD001F847F</string>
-				<string>FA04E7561CB6AABD001F847F</string>
-				<string>FA04E7541CB6AABD001F847F</string>
-				<string>FA04E7551CB6AABD001F847F</string>
-				<string>FA04E7581CB6AABD001F847F</string>
-				<string>FA04E7531CB6AABD001F847F</string>
-				<string>FA04E7291CB6AA0E001F847F</string>
-				<string>FA04E7571CB6AABD001F847F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>FA04E7221CB6AA0E001F847F</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>415E58E4B38A7002202FEE60</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>FA04E7231CB6AA0E001F847F</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>FA04E7331CB6AA0E001F847F</string>
-				<string>FA04E7301CB6AA0E001F847F</string>
-				<string>FA04E74A1CB6AA98001F847F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>FA04E7241CB6AA0E001F847F</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>FA04E7421CB6AA0F001F847F</string>
-			<key>buildPhases</key>
-			<array>
-				<string>91E4FFFD626D47F32A997E11</string>
-				<string>FA04E7211CB6AA0E001F847F</string>
-				<string>FA04E7221CB6AA0E001F847F</string>
-				<string>FA04E7231CB6AA0E001F847F</string>
-				<string>85A53CC40558BE1FAE530179</string>
-				<string>3B7E08659019D1EF1E246A30</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Diuit Chat</string>
-			<key>productName</key>
-			<string>Diuit Chat</string>
-			<key>productReference</key>
-			<string>FA04E7251CB6AA0E001F847F</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>FA04E7251CB6AA0E001F847F</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Diuit Chat.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>FA04E7261CB6AA0E001F847F</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>FA04E7251CB6AA0E001F847F</string>
-				<string>FA04E7391CB6AA0F001F847F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FA04E7271CB6AA0E001F847F</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>FA04E7481CB6AA72001F847F</string>
-				<string>FA04E7281CB6AA0E001F847F</string>
-				<string>FA04E7341CB6AA0E001F847F</string>
-				<string>FA04E74B1CB6AABD001F847F</string>
-				<string>FA04E74C1CB6AABD001F847F</string>
-				<string>FA04E74D1CB6AABD001F847F</string>
-				<string>FA04E74E1CB6AABD001F847F</string>
-				<string>FA04E74F1CB6AABD001F847F</string>
-				<string>FA04E7501CB6AABD001F847F</string>
-				<string>FA04E7511CB6AABD001F847F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Diuit Chat</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FA04E7281CB6AA0E001F847F</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>AppDelegate.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FA04E7291CB6AA0E001F847F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>FA04E7281CB6AA0E001F847F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>FA04E72F1CB6AA0E001F847F</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Assets.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FA04E7301CB6AA0E001F847F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>FA04E72F1CB6AA0E001F847F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>FA04E7311CB6AA0E001F847F</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>FA04E7321CB6AA0E001F847F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FA04E7321CB6AA0E001F847F</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FA04E7331CB6AA0E001F847F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>FA04E7311CB6AA0E001F847F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>FA04E7341CB6AA0E001F847F</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FA04E7351CB6AA0F001F847F</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>FA04E73E1CB6AA0F001F847F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>FA04E7361CB6AA0F001F847F</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>FA04E7371CB6AA0F001F847F</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>FA04E7381CB6AA0F001F847F</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>FA04E7451CB6AA0F001F847F</string>
-			<key>buildPhases</key>
-			<array>
-				<string>FA04E7351CB6AA0F001F847F</string>
-				<string>FA04E7361CB6AA0F001F847F</string>
-				<string>FA04E7371CB6AA0F001F847F</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>FA04E73B1CB6AA0F001F847F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Diuit ChatTests</string>
-			<key>productName</key>
-			<string>Diuit ChatTests</string>
-			<key>productReference</key>
-			<string>FA04E7391CB6AA0F001F847F</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>FA04E7391CB6AA0F001F847F</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Diuit ChatTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>FA04E73A1CB6AA0F001F847F</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>FA04E71D1CB6AA0E001F847F</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>FA04E7241CB6AA0E001F847F</string>
-			<key>remoteInfo</key>
-			<string>Diuit Chat</string>
-		</dict>
-		<key>FA04E73B1CB6AA0F001F847F</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>FA04E7241CB6AA0E001F847F</string>
-			<key>targetProxy</key>
-			<string>FA04E73A1CB6AA0F001F847F</string>
-		</dict>
-		<key>FA04E73C1CB6AA0F001F847F</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>FA04E73D1CB6AA0F001F847F</string>
-				<string>FA04E73F1CB6AA0F001F847F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Diuit ChatTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FA04E73D1CB6AA0F001F847F</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>Diuit_ChatTests.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FA04E73E1CB6AA0F001F847F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>FA04E73D1CB6AA0F001F847F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>FA04E73F1CB6AA0F001F847F</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FA04E7401CB6AA0F001F847F</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>ENABLE_TESTABILITY</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>FA04E7411CB6AA0F001F847F</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>FA04E7421CB6AA0F001F847F</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>FA04E7431CB6AA0F001F847F</string>
-				<string>FA04E7441CB6AA0F001F847F</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>FA04E7431CB6AA0F001F847F</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>2857D2F89FEF2C6F7692035A</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Diuit Chat/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.duolc.diuitchat</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>FA04E7441CB6AA0F001F847F</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>5F40D2DAE3ADAD66B51CA175</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Diuit Chat/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.duolc.diuitchat</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>FA04E7451CB6AA0F001F847F</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>FA04E7461CB6AA0F001F847F</string>
-				<string>FA04E7471CB6AA0F001F847F</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>FA04E7461CB6AA0F001F847F</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Diuit ChatTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.duolc.Diuit-ChatTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/Diuit Chat.app/Diuit Chat</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>FA04E7471CB6AA0F001F847F</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Diuit ChatTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.duolc.Diuit-ChatTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/Diuit Chat.app/Diuit Chat</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>FA04E7481CB6AA72001F847F</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>FA04E7491CB6AA98001F847F</string>
-				<string>FA04E72F1CB6AA0E001F847F</string>
-				<string>FA04E7311CB6AA0E001F847F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Resources</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FA04E7491CB6AA98001F847F</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>path</key>
-			<string>Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FA04E74A1CB6AA98001F847F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>FA04E7491CB6AA98001F847F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>FA04E74B1CB6AABD001F847F</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>LoginVC.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FA04E74C1CB6AABD001F847F</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ChatroomVC.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FA04E74D1CB6AABD001F847F</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ChatroomListVC.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FA04E74E1CB6AABD001F847F</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ChatroomSettingVC.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FA04E74F1CB6AABD001F847F</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ChooserUserVC.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FA04E7501CB6AABD001F847F</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>User.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FA04E7511CB6AABD001F847F</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>Utility.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FA04E7521CB6AABD001F847F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>FA04E74B1CB6AABD001F847F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>FA04E7531CB6AABD001F847F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>FA04E74C1CB6AABD001F847F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>FA04E7541CB6AABD001F847F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>FA04E74D1CB6AABD001F847F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>FA04E7551CB6AABD001F847F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>FA04E74E1CB6AABD001F847F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>FA04E7561CB6AABD001F847F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>FA04E74F1CB6AABD001F847F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>FA04E7571CB6AABD001F847F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>FA04E7501CB6AABD001F847F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>FA04E7581CB6AABD001F847F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>FA04E7511CB6AABD001F847F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>FA04E71D1CB6AA0E001F847F</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		415E58E4B38A7002202FEE60 /* Pods_Diuit_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A858FB55BFAB3214C419BF11 /* Pods_Diuit_Chat.framework */; };
+		FA04E7291CB6AA0E001F847F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA04E7281CB6AA0E001F847F /* AppDelegate.swift */; };
+		FA04E7301CB6AA0E001F847F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA04E72F1CB6AA0E001F847F /* Assets.xcassets */; };
+		FA04E7331CB6AA0E001F847F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA04E7311CB6AA0E001F847F /* LaunchScreen.storyboard */; };
+		FA04E73E1CB6AA0F001F847F /* Diuit_ChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA04E73D1CB6AA0F001F847F /* Diuit_ChatTests.swift */; };
+		FA04E74A1CB6AA98001F847F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA04E7491CB6AA98001F847F /* Main.storyboard */; };
+		FA04E7521CB6AABD001F847F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA04E74B1CB6AABD001F847F /* LoginVC.swift */; };
+		FA04E7541CB6AABD001F847F /* ChatroomListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA04E74D1CB6AABD001F847F /* ChatroomListVC.swift */; };
+		FA04E7551CB6AABD001F847F /* ChatroomSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA04E74E1CB6AABD001F847F /* ChatroomSettingVC.swift */; };
+		FA04E7561CB6AABD001F847F /* ChooserUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA04E74F1CB6AABD001F847F /* ChooserUserVC.swift */; };
+		FA04E7571CB6AABD001F847F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA04E7501CB6AABD001F847F /* User.swift */; };
+		FA04E7581CB6AABD001F847F /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA04E7511CB6AABD001F847F /* Utility.swift */; };
+		FA80BE941CB94543006FDC71 /* ChatMessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA80BE931CB94543006FDC71 /* ChatMessagesVC.swift */; };
+		FA80BE971CB94607006FDC71 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA80BE961CB94607006FDC71 /* Message.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA04E73A1CB6AA0F001F847F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA04E71D1CB6AA0E001F847F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA04E7241CB6AA0E001F847F;
+			remoteInfo = "Diuit Chat";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2857D2F89FEF2C6F7692035A /* Pods-Diuit Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diuit Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Diuit Chat/Pods-Diuit Chat.debug.xcconfig"; sourceTree = "<group>"; };
+		5F40D2DAE3ADAD66B51CA175 /* Pods-Diuit Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diuit Chat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Diuit Chat/Pods-Diuit Chat.release.xcconfig"; sourceTree = "<group>"; };
+		A858FB55BFAB3214C419BF11 /* Pods_Diuit_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Diuit_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA04E7251CB6AA0E001F847F /* Diuit Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Diuit Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA04E7281CB6AA0E001F847F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA04E72F1CB6AA0E001F847F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA04E7321CB6AA0E001F847F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FA04E7341CB6AA0E001F847F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA04E7391CB6AA0F001F847F /* Diuit ChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Diuit ChatTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA04E73D1CB6AA0F001F847F /* Diuit_ChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diuit_ChatTests.swift; sourceTree = "<group>"; };
+		FA04E73F1CB6AA0F001F847F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA04E7491CB6AA98001F847F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FA04E74B1CB6AABD001F847F /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		FA04E74D1CB6AABD001F847F /* ChatroomListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatroomListVC.swift; sourceTree = "<group>"; };
+		FA04E74E1CB6AABD001F847F /* ChatroomSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatroomSettingVC.swift; sourceTree = "<group>"; };
+		FA04E74F1CB6AABD001F847F /* ChooserUserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooserUserVC.swift; sourceTree = "<group>"; };
+		FA04E7501CB6AABD001F847F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FA04E7511CB6AABD001F847F /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		FA80BE931CB94543006FDC71 /* ChatMessagesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessagesVC.swift; sourceTree = "<group>"; };
+		FA80BE961CB94607006FDC71 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA04E7221CB6AA0E001F847F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				415E58E4B38A7002202FEE60 /* Pods_Diuit_Chat.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA04E7361CB6AA0F001F847F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		624C757A730750ABA6098273 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2857D2F89FEF2C6F7692035A /* Pods-Diuit Chat.debug.xcconfig */,
+				5F40D2DAE3ADAD66B51CA175 /* Pods-Diuit Chat.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		69610ED904FC5FAB05D32D43 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A858FB55BFAB3214C419BF11 /* Pods_Diuit_Chat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA04E71C1CB6AA0E001F847F = {
+			isa = PBXGroup;
+			children = (
+				FA04E7271CB6AA0E001F847F /* Diuit Chat */,
+				FA04E73C1CB6AA0F001F847F /* Diuit ChatTests */,
+				FA04E7261CB6AA0E001F847F /* Products */,
+				624C757A730750ABA6098273 /* Pods */,
+				69610ED904FC5FAB05D32D43 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FA04E7261CB6AA0E001F847F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA04E7251CB6AA0E001F847F /* Diuit Chat.app */,
+				FA04E7391CB6AA0F001F847F /* Diuit ChatTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA04E7271CB6AA0E001F847F /* Diuit Chat */ = {
+			isa = PBXGroup;
+			children = (
+				FA04E7481CB6AA72001F847F /* Resources */,
+				FA04E7281CB6AA0E001F847F /* AppDelegate.swift */,
+				FA04E7341CB6AA0E001F847F /* Info.plist */,
+				FA04E74B1CB6AABD001F847F /* LoginVC.swift */,
+				FA04E74D1CB6AABD001F847F /* ChatroomListVC.swift */,
+				FA04E74E1CB6AABD001F847F /* ChatroomSettingVC.swift */,
+				FA04E74F1CB6AABD001F847F /* ChooserUserVC.swift */,
+				FA04E7501CB6AABD001F847F /* User.swift */,
+				FA04E7511CB6AABD001F847F /* Utility.swift */,
+				FA80BE961CB94607006FDC71 /* Message.swift */,
+				FA80BE931CB94543006FDC71 /* ChatMessagesVC.swift */,
+			);
+			path = "Diuit Chat";
+			sourceTree = "<group>";
+		};
+		FA04E73C1CB6AA0F001F847F /* Diuit ChatTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA04E73D1CB6AA0F001F847F /* Diuit_ChatTests.swift */,
+				FA04E73F1CB6AA0F001F847F /* Info.plist */,
+			);
+			path = "Diuit ChatTests";
+			sourceTree = "<group>";
+		};
+		FA04E7481CB6AA72001F847F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FA04E7491CB6AA98001F847F /* Main.storyboard */,
+				FA04E72F1CB6AA0E001F847F /* Assets.xcassets */,
+				FA04E7311CB6AA0E001F847F /* LaunchScreen.storyboard */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA04E7241CB6AA0E001F847F /* Diuit Chat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA04E7421CB6AA0F001F847F /* Build configuration list for PBXNativeTarget "Diuit Chat" */;
+			buildPhases = (
+				91E4FFFD626D47F32A997E11 /* Check Pods Manifest.lock */,
+				FA04E7211CB6AA0E001F847F /* Sources */,
+				FA04E7221CB6AA0E001F847F /* Frameworks */,
+				FA04E7231CB6AA0E001F847F /* Resources */,
+				85A53CC40558BE1FAE530179 /* Embed Pods Frameworks */,
+				3B7E08659019D1EF1E246A30 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Diuit Chat";
+			productName = "Diuit Chat";
+			productReference = FA04E7251CB6AA0E001F847F /* Diuit Chat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA04E7381CB6AA0F001F847F /* Diuit ChatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA04E7451CB6AA0F001F847F /* Build configuration list for PBXNativeTarget "Diuit ChatTests" */;
+			buildPhases = (
+				FA04E7351CB6AA0F001F847F /* Sources */,
+				FA04E7361CB6AA0F001F847F /* Frameworks */,
+				FA04E7371CB6AA0F001F847F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA04E73B1CB6AA0F001F847F /* PBXTargetDependency */,
+			);
+			name = "Diuit ChatTests";
+			productName = "Diuit ChatTests";
+			productReference = FA04E7391CB6AA0F001F847F /* Diuit ChatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA04E71D1CB6AA0E001F847F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = duolC;
+				TargetAttributes = {
+					FA04E7241CB6AA0E001F847F = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					FA04E7381CB6AA0F001F847F = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = FA04E7241CB6AA0E001F847F;
+					};
+				};
+			};
+			buildConfigurationList = FA04E7201CB6AA0E001F847F /* Build configuration list for PBXProject "Diuit Chat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA04E71C1CB6AA0E001F847F;
+			productRefGroup = FA04E7261CB6AA0E001F847F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA04E7241CB6AA0E001F847F /* Diuit Chat */,
+				FA04E7381CB6AA0F001F847F /* Diuit ChatTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA04E7231CB6AA0E001F847F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA04E7331CB6AA0E001F847F /* LaunchScreen.storyboard in Resources */,
+				FA04E7301CB6AA0E001F847F /* Assets.xcassets in Resources */,
+				FA04E74A1CB6AA98001F847F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA04E7371CB6AA0F001F847F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3B7E08659019D1EF1E246A30 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Diuit Chat/Pods-Diuit Chat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85A53CC40558BE1FAE530179 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Diuit Chat/Pods-Diuit Chat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91E4FFFD626D47F32A997E11 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA04E7211CB6AA0E001F847F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA80BE941CB94543006FDC71 /* ChatMessagesVC.swift in Sources */,
+				FA04E7521CB6AABD001F847F /* LoginVC.swift in Sources */,
+				FA04E7561CB6AABD001F847F /* ChooserUserVC.swift in Sources */,
+				FA04E7541CB6AABD001F847F /* ChatroomListVC.swift in Sources */,
+				FA04E7551CB6AABD001F847F /* ChatroomSettingVC.swift in Sources */,
+				FA04E7581CB6AABD001F847F /* Utility.swift in Sources */,
+				FA80BE971CB94607006FDC71 /* Message.swift in Sources */,
+				FA04E7291CB6AA0E001F847F /* AppDelegate.swift in Sources */,
+				FA04E7571CB6AABD001F847F /* User.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA04E7351CB6AA0F001F847F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA04E73E1CB6AA0F001F847F /* Diuit_ChatTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA04E73B1CB6AA0F001F847F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA04E7241CB6AA0E001F847F /* Diuit Chat */;
+			targetProxy = FA04E73A1CB6AA0F001F847F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FA04E7311CB6AA0E001F847F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA04E7321CB6AA0E001F847F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA04E7401CB6AA0F001F847F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FA04E7411CB6AA0F001F847F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA04E7431CB6AA0F001F847F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2857D2F89FEF2C6F7692035A /* Pods-Diuit Chat.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Diuit Chat/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.duolc.diuitchat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FA04E7441CB6AA0F001F847F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F40D2DAE3ADAD66B51CA175 /* Pods-Diuit Chat.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Diuit Chat/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.duolc.diuitchat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FA04E7461CB6AA0F001F847F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Diuit ChatTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.duolc.Diuit-ChatTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Diuit Chat.app/Diuit Chat";
+			};
+			name = Debug;
+		};
+		FA04E7471CB6AA0F001F847F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Diuit ChatTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.duolc.Diuit-ChatTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Diuit Chat.app/Diuit Chat";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA04E7201CB6AA0E001F847F /* Build configuration list for PBXProject "Diuit Chat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA04E7401CB6AA0F001F847F /* Debug */,
+				FA04E7411CB6AA0F001F847F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA04E7421CB6AA0F001F847F /* Build configuration list for PBXNativeTarget "Diuit Chat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA04E7431CB6AA0F001F847F /* Debug */,
+				FA04E7441CB6AA0F001F847F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA04E7451CB6AA0F001F847F /* Build configuration list for PBXNativeTarget "Diuit ChatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA04E7461CB6AA0F001F847F /* Debug */,
+				FA04E7471CB6AA0F001F847F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FA04E71D1CB6AA0E001F847F /* Project object */;
+}
