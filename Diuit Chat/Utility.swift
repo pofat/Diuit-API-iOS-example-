@@ -11,8 +11,9 @@ import UIKit
 public typealias HTTPRequestCallback = (NSError?, NSData?) -> Void
 
 class Utility: NSObject {
-    static let devicePlatform: String = "ios_sandbox"
+    static let devicePlatform: String = "ios_production"
     private static let _serverUrl:String = "https://blueberry-pie-56453.herokuapp.com"
+    //private static let _serverUrl:String = "http://localhost:5566"
     
     // MARK: getters
     static var serverUrl:String {
@@ -82,6 +83,27 @@ extension String {
         let start = startIndex.advancedBy(r.startIndex)
         let end = start.advancedBy(r.endIndex - r.startIndex)
         return self[Range(start ..< end)]
+    }
+    
+    func isValidUsername() -> Bool {
+        let pattern = "^[a-z0-9_]{3,16}$"
+        let test = NSPredicate(format: "SELF MATCHES %@", pattern)
+        
+        return test.evaluateWithObject(self)
+    }
+    
+    func isValidEmail() -> Bool {
+        let pattern = "^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$"
+        let test = NSPredicate(format: "SELF MATCHES %@", pattern)
+        
+        return test.evaluateWithObject(self)
+    }
+    
+    func isValidPassword() -> Bool {
+        let pattern = "^[a-zA-Z0-9_-]{4,18}$"
+        let test = NSPredicate(format: "SELF MATCHES %@", pattern)
+        
+        return test.evaluateWithObject(self)
     }
 }
 
