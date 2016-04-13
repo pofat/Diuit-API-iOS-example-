@@ -9,6 +9,8 @@
 import UIKit
 import SVProgressHUD
 import DUMessaging
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // init DUMessaging
         DUMessaging.setAppId("test", appKey: "123")
+        // Fabric
+        Fabric.with([Crashlytics.self])
         // customize progress hud
         SVProgressHUD.setDefaultStyle(.Light)
         SVProgressHUD.setDefaultMaskType(.Black)

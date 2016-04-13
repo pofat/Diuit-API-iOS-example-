@@ -21,17 +21,24 @@ class ChatroomSettingVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.serials = self.chat.members!
-        let index = self.serials.indexOf((DUMessaging.currentUser?.serial)!)
-        self.serials.removeAtIndex(index!)
         
-        self.idLabel.text = "Chat ID: \(self.chat.id)"
-        self.roomNameText.text = (self.chat.meta!["name"] != nil) ? self.chat.meta!["name"] as! String : "room \(chat.id)"
         // Do any additional setup after loading the view.
         self.tableView.allowsSelection = false
         self.tableView.separatorStyle = .None
-        self.tableView.reloadData()
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if chat != nil {
+            self.serials = self.chat.members!
+            let index = self.serials.indexOf((DUMessaging.currentUser?.serial)!)
+            self.serials.removeAtIndex(index!)
+            
+            self.idLabel.text = "Chat ID: \(self.chat.id)"
+            self.roomNameText.text = (self.chat.meta!["name"] != nil) ? self.chat.meta!["name"] as! String : "room \(chat.id)"
+            self.tableView.reloadData()
+        }
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

@@ -16,13 +16,16 @@ class User {
     
     static var chats: [DUChat] = []
     
-    static func refreshChats() {
+    static func refreshChats(completion:((NSError?) -> Void)) {
         DUMessaging.listChatrooms() { error, chats in
             guard let _:[DUChat] = chats where error == nil else {
                 print(error!.localizedDescription)
+                completion(error)
                 return
             }
             self.chats = chats!
+            completion(nil)
+            
         }
     }
 }

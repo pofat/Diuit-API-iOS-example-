@@ -7,6 +7,8 @@ target 'Diuit Chat' do
     pod 'SVProgressHUD'
     pod 'TTTAttributedLabel'
     pod 'JSQMessagesViewController'
+    pod 'Fabric'
+    pod 'Crashlytics'
 end
 
 target 'Diuit ChatTests' do

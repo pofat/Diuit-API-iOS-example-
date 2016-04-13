@@ -199,13 +199,14 @@ class ChatMessagesVC: JSQMessagesViewController, UIImagePickerControllerDelegate
                     })
                 }
             } else if mime == "text/plain" || mime == "application/diuit-chat-sys-message" { // text
-                let attributes: [String: AnyObject] = [NSForegroundColorAttributeName: cell.textView.textColor!, NSUnderlineStyleAttributeName: 1]
-                cell.textView.linkTextAttributes = attributes
                 if message.senderSerial == DUMessaging.currentUser!.serial {
                     cell.textView.textColor = UIColor.blackColor()
                 } else {
                     cell.textView.textColor = UIColor.whiteColor()
                 }
+                let attributes: [String: AnyObject] = [NSForegroundColorAttributeName: cell.textView.textColor!, NSUnderlineStyleAttributeName: 1]
+                cell.textView.linkTextAttributes = attributes
+                
             }
             
         }

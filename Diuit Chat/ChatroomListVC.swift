@@ -10,7 +10,6 @@ import UIKit
 import DUMessaging
 
 class ChatroomListVC: UIViewController {
-    var requireRefresh:Bool = false
 
     @IBOutlet var tableView: UITableView!
     
@@ -25,22 +24,9 @@ class ChatroomListVC: UIViewController {
             }
             // if system message
             if message.mime == "application/diuit-chat-sys-message" {
-                let json = message.data!.parseJSONString()
-                if let messageChat = self.findChatWith(message.chat!.id) {
-                    if let messageType = json["type"] as? String{
-                        switch(messageType) {
-                        case "user.joined":
-                            messageChat.addMemberWith(json["userId"] as! String)
-                            break
-                        case "user.kicked":
-                            messageChat.removeMemberWith(json["userId"] as! String)
-                            break
-                        case "user.left":
-                            messageChat.removeMemberWith(json["userId"] as! String)
-                            break
-                        default:
-                            break
-                        }
+                User.refreshChats() { error in
+                    if error != nil {
+                        dispatch_async(dispatch_get_main_queue(), { self.tableView.reloadData() })
                     }
                 }
             }
@@ -63,14 +49,17 @@ class ChatroomListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.registerMessageObserver()
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        if requireRefresh {
-            
-        } else {
-            self.tableView.reloadData()
+        User.refreshChats() { error in
+            if error == nil {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.tableView.reloadData()
+                })
+            }
         }
     }
 

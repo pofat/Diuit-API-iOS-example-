@@ -1,6 +1,9 @@
 PODS:
+  - Crashlytics (3.7.0):
+    - Fabric (~> 1.6.3)
   - DUMessaging (1.0.0):
     - Socket.IO-Client-Swift (~> 5.3.1)
+  - Fabric (1.6.7)
   - JSQMessagesViewController (7.2.0):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
@@ -12,14 +15,18 @@ PODS:
   - TTTAttributedLabel (1.13.4)
 
 DEPENDENCIES:
+  - Crashlytics
   - DUMessaging
+  - Fabric
   - JSQMessagesViewController
   - SDWebImage
   - SVProgressHUD
   - TTTAttributedLabel
 
 SPEC CHECKSUMS:
+  Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
   DUMessaging: 6ebb751eefa25b80b115510bc69e2858df6fc0ee
+  Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   JSQMessagesViewController: 73cab48aa92fc2d512f3b6724f3425cc47a19eb5
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
