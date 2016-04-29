@@ -9,7 +9,10 @@
 import UIKit
 import SVProgressHUD
 
+/// View controller for sign up
 class SignUpVC: UIViewController {
+    var delegate: LoginVC? = nil
+    
     @IBOutlet var username: UITextField!
     @IBOutlet var email: UITextField!
     @IBOutlet var password: UITextField!
@@ -51,6 +54,7 @@ class SignUpVC: UIViewController {
         }
         
         SVProgressHUD.showWithStatus("Loading...")
+        // do signup
         let url = "/auth/signup"
         let deviceSerial: String = UIDevice.currentDevice().identifierForVendor?.UUIDString ?? "\(self.username.text!).device.0"
         let params = "username=\(self.username.text!)&password=\(self.password.text!)&email=\(self.email.text!)&deviceSerial=\(deviceSerial)&platform=\(Utility.devicePlatform)"
@@ -61,8 +65,11 @@ class SignUpVC: UIViewController {
                 print("error code:\(error!.code)\nreason:\(error!.localizedDescription)")
                 return
             }
-            SVProgressHUD.dismiss()
+            // after signup completed, login automatically
             dispatch_async(dispatch_get_main_queue(),{
+                self.delegate?.autoLogin = true
+                self.delegate?.autoUsername = self.username.text!
+                self.delegate?.autoPassword = self.password.text!
                 self.dismissViewControllerAnimated(true, completion: nil)
             })
             
@@ -70,6 +77,7 @@ class SignUpVC: UIViewController {
     }
 }
 
+// handle return for UITextField
 extension SignUpVC: UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField == self.username {

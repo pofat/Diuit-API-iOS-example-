@@ -10,13 +10,13 @@ import UIKit
 import DUMessaging
 import SVProgressHUD
 
-/**
-    This view controller displays information of a chat room and you can do:
- 
-    - Edit chat room name: This value is saved in meta with key "name"
-    - Kick user
- 
- */
+///
+///    This view controller displays information of a chat room and you can do:
+///
+///    - Edit chat room name: This value is saved in meta with key "name"
+///    - Kick user
+///
+///
 class ChatroomSettingVC: UIViewController {
 
     @IBOutlet var idLabel: UILabel!
@@ -29,7 +29,6 @@ class ChatroomSettingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // table view setup
         self.tableView.allowsSelection = false
         self.tableView.separatorStyle = .None
         
@@ -57,6 +56,10 @@ class ChatroomSettingVC: UIViewController {
 
     @IBAction func save() {
         if self.roomNameText.text != "" {
+            
+            /**
+                [Diuit API] Update the meta of the chat room
+             */
             self.chat.updateMeta(["name": self.roomNameText.text!]) { error, chat in
                 if error == nil {
                     self.navigationController?.popViewControllerAnimated(true)
@@ -70,6 +73,10 @@ class ChatroomSettingVC: UIViewController {
 
     @IBAction func leaveRoom() {
         SVProgressHUD.showWithStatus("Loading...")
+        
+        /**
+            [Diuit API] Leave the chat room
+         */
         self.chat.leaveOnCompletion() { error, message in
             guard error == nil else {
                 SVProgressHUD.showErrorWithStatus("Leave chat room failed")
@@ -110,6 +117,10 @@ extension ChatroomSettingVC: UITableViewDataSource {
         if (((sender.superview?.superview?.isKindOfClass(UITableViewCell))) != nil) {
             let indexPath = self.tableView.indexPathForCell(sender.superview?.superview as! UITableViewCell)
             NSLog("kick \(self.serials[indexPath!.row])")
+            
+            /**
+                [Diuit API] Kick a user
+             */
             self.chat.kickUser(self.serials[indexPath!.row]) {error, message in
                 if error != nil {
                     NSLog("error kicking due to : \(error!.localizedDescription)")
@@ -148,6 +159,10 @@ extension ChatroomSettingVC: UITableViewDataSource {
                 whiteList = self.chat.whiteList.map { return $0 }!
             }
             whiteList.removeAtIndex(whiteList.indexOf(userSerial)!)
+            
+            /**
+                [Diuit API] Update white list of the chat room
+             */
             self.chat.updateWhiteList(whiteList) { error, message in
                 guard error == nil else {
                     print("update white list error:\(error!.localizedDescription)")

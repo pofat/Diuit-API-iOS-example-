@@ -12,8 +12,7 @@ public typealias HTTPRequestCallback = (NSError?, NSData?) -> Void
 
 class Utility: NSObject {
     static let devicePlatform: String = "ios_production"
-    private static let _serverUrl:String = "https://blueberry-pie-56453.herokuapp.com"
-    //private static let _serverUrl:String = "http://localhost:5566"
+    private static let _serverUrl:String = "YOUR_SERVER_URL"
     
     // MARK: getters
     static var serverUrl:String {

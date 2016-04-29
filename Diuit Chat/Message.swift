@@ -11,9 +11,7 @@ import DUMessaging
 import JSQMessagesViewController
 import SDWebImage
 
-/**
-    This class is to make DUMessage instances conform to JSQMessageData protocol
- */
+/// This class is to make DUMessage instances conform to JSQMessageData protocol
 class Message: NSObject, JSQMessageData {
     /// The oirignal DUMessage instance from Diuit API server
     let originMessage: DUMessage

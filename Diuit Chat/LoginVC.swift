@@ -11,9 +11,29 @@ import SVProgressHUD
 import DUMessaging
 
 class LoginVC: UIViewController {
+    var autoLogin = false
+    var autoUsername = ""
+    var autoPassword = ""
 
     @IBOutlet var userName: UITextField!
     @IBOutlet var password: UITextField!
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if autoLogin { // do auto login (after sign up)
+            dispatch_async(dispatch_get_main_queue(), {
+                self.userName.text = self.autoUsername
+                self.password.text = self.autoPassword
+                self.doLogin()
+            })
+        }
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let vc = segue.destinationViewController as? SignUpVC {
+            vc.delegate = self
+        }
+    }
     
     @IBAction func doLogin() {
         guard self.userName!.text! != "" else {
@@ -47,7 +67,12 @@ class LoginVC: UIViewController {
                 return
             }
             if let session = json["session"] as? String {
+                
+                /**
+                    [Diuit API] Before using all Diuit features, you have to authenticate your device with a session token.
+                 */
                 DUMessaging.loginWithAuthToken(session) { error, result in
+                    
                     guard error == nil else {
                         SVProgressHUD.showErrorWithStatus("Login failed")
                         SVProgressHUD.dismissWithDelay(NSTimeInterval(1.0))
@@ -59,6 +84,10 @@ class LoginVC: UIViewController {
                     User.currentEmail = userDict["email"] as! String
                     User.currentUsername = self.userName!.text!
                     User.currentUserId = userDict["id"] as! Int
+                    
+                    /**
+                        [Diuit API] List all chat rooms of current user
+                     */
                     DUMessaging.listChatrooms() { error, chats in
                         guard let _:[DUChat] = chats where error == nil else {
                             SVProgressHUD.showErrorWithStatus("Login failed")

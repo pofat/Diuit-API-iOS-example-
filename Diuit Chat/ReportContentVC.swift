@@ -10,6 +10,7 @@ import UIKit
 import DUMessaging
 import SVProgressHUD
 
+/// view controller for reporting offesive user
 class ReportContentVC: UIViewController {
     @IBOutlet var targetUser: UITextField!
     @IBOutlet var reasonTextView: UITextView!

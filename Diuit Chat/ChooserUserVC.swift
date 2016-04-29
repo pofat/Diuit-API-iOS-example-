@@ -10,9 +10,7 @@ import UIKit
 import DUMessaging
 import SVProgressHUD
 
-/**
-    You can create a new chat room with any other users or join a specific room with id. To create a new chat room, you can query by user name to check if such username exists.
- */
+/// You can create a new chat room with any other users or join a specific room with id. To create a new chat room, you can query by user name to check if such username exists.
 class ChooserUserVC: UIViewController {
     @IBOutlet var otherUsername: UITextField!
     @IBOutlet var chatRoomId: UITextField!
@@ -38,6 +36,9 @@ class ChooserUserVC: UIViewController {
             }
             
             SVProgressHUD.showWithStatus("Loading...")
+            /**
+                [Diuit API] Create a new chat room with given array of user serials
+             */
             DUMessaging.createChatroomWith(userSerials) { error, chat in
                 guard let _:DUChat = chat where error == nil else {
                     SVProgressHUD.showErrorWithStatus("Create chat room failed")
@@ -59,6 +60,10 @@ class ChooserUserVC: UIViewController {
             
             SVProgressHUD.showWithStatus("Loading...")
             let chatRoomId:Int = Int(self.chatRoomId.text!)!
+            
+            /**
+                [Diuit API] Join an existed chat room with given id
+             */
             DUMessaging.joinChatroomWithId(chatRoomId) { error, chat in
                 guard let _:DUChat = chat where error == nil else {
                     SVProgressHUD.showErrorWithStatus("Join chat room failed")

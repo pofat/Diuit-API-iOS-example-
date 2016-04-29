@@ -13,9 +13,7 @@ import SDWebImage
 import SVProgressHUD
 import DUMessaging
 
-/**
-    Display and send out messages.
- */
+/// Display and send out messages.
 class ChatMessagesVC: JSQMessagesViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     /// Current chat room
     var chat: DUChat!
@@ -28,7 +26,9 @@ class ChatMessagesVC: JSQMessagesViewController, UIImagePickerControllerDelegate
     // MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // register message receiver
+        /**
+            [Diuit API] Register message receiver for this chat room
+         */
         if let chatId = self.chat?.id {
             NSNotificationCenter.defaultCenter().addObserverForName("messageReceived.\(chatId)", object: nil, queue: NSOperationQueue.mainQueue()) { notif in
                 guard let _:DUMessage = notif.userInfo!["message"] as? DUMessage else {
@@ -66,6 +66,9 @@ class ChatMessagesVC: JSQMessagesViewController, UIImagePickerControllerDelegate
         senderId = DUMessaging.currentUser!.serial
         setupTextAvatar(senderDisplayName, incoming: false)
         
+        /**
+            [Diuit API] list history message before a given time(default value is now), paging supported
+         */
         chat.listMessagesBefore() { error, messages in
             guard let _:[DUMessage] = messages where error == nil else {
                 print("error:\(error?.localizedDescription)")
@@ -107,6 +110,10 @@ class ChatMessagesVC: JSQMessagesViewController, UIImagePickerControllerDelegate
         picker.dismissViewControllerAnimated(true, completion: {
             () -> Void in
         })
+        
+        /**
+            [Diuit API] Send image message
+         */
         self.chat.sendImage(image, meta: meta, pushMessage: "You've got an image message", pushPayload: nil, badge: "increment") { error, message in
             guard let _:DUMessage = message where error == nil else {
                 SVProgressHUD.showErrorWithStatus(error!.localizedDescription)
@@ -123,6 +130,10 @@ class ChatMessagesVC: JSQMessagesViewController, UIImagePickerControllerDelegate
         if text == "" { return }
         
         JSQSystemSoundPlayer.jsq_playMessageSentSound()
+        
+        /**
+            [Diuit API] Send text message and customize push notification body
+         */
         chat.sendText(text, meta: ["senderName":senderDisplayName], pushMessage:"\(senderDisplayName): \(text)") { error, message in
             guard let _:DUMessage = message where error == nil else {
                 print(error?.localizedDescription)

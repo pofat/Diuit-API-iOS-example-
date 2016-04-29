@@ -9,15 +9,13 @@
 import UIKit
 import DUMessaging
 
-/**
-    This view controller display all chat rooms of current user.
- */
+/// This view controller display all chat rooms of current user.
 class ChatroomListVC: UIViewController {
 
     @IBOutlet var tableView: UITableView!
     
     /**
-        Register NSNotification obseerver to receive real time message from Diuit API server.
+        [Diuit API] Register NSNotification obseerver to receive real time message from Diuit API server.
      */
     func registerMessageObserver() {
         NSNotificationCenter.defaultCenter().addObserverForName("messageReceived", object: nil, queue: NSOperationQueue.mainQueue()) { notif in
@@ -28,30 +26,10 @@ class ChatroomListVC: UIViewController {
                     dispatch_async(dispatch_get_main_queue(), { self.tableView.reloadData() })
                 }
             }
-            /*
-            let targetChat = self.findChatWith(message.chat!.id)
-            guard targetChat != nil else {
-                print("can't find chatroom of received message")
-                return
-            }
-            // if system message
-            if message.mime == "application/diuit-chat-sys-message" {
-                User.refreshChats() { error in
-                    if error != nil {
-                        dispatch_async(dispatch_get_main_queue(), { self.tableView.reloadData() })
-                    }
-                }
-            }
-            if let targetChat = self.findChatWith(message.chat!.id) {
-                targetChat.lastMessage = message
-                self.tableView.reloadData()
-            }
- */
         }
     }
     
     // MARK: Life Cycle
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showChatroomSegue" {
             let vc = segue.destinationViewController as! ChatMessagesVC
