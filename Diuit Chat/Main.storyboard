@@ -480,23 +480,12 @@
                                                     <rect key="frame" x="312" y="7" width="30" height="30"/>
                                                     <state key="normal" title="Kick"/>
                                                 </button>
-                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bz6-2F-e6v">
-                                                    <rect key="frame" x="258" y="7" width="46" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="46" id="Ayu-Pp-d6f"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Block">
-                                                        <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="c9F-Hu-0vq" secondAttribute="trailing" constant="8" id="9Ov-sQ-oe6"/>
-                                                <constraint firstItem="c9F-Hu-0vq" firstAttribute="leading" secondItem="bz6-2F-e6v" secondAttribute="trailing" constant="8" id="ckf-cN-YGs"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="TJ9-SR-6gl" secondAttribute="leading" id="jcb-G2-ogb"/>
                                                 <constraint firstItem="TJ9-SR-6gl" firstAttribute="top" secondItem="aq9-nF-Ej0" secondAttribute="topMargin" constant="3" id="kGK-K0-Iqm"/>
                                                 <constraint firstItem="c9F-Hu-0vq" firstAttribute="centerY" secondItem="TJ9-SR-6gl" secondAttribute="centerY" id="oVU-Tb-uS0"/>
-                                                <constraint firstItem="bz6-2F-e6v" firstAttribute="centerY" secondItem="c9F-Hu-0vq" secondAttribute="centerY" id="qNL-1o-Esh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -565,6 +554,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="idLabel" destination="WVj-pi-yAK" id="5iu-cy-K7H"/>
+                        <outlet property="reportBtn" destination="eqb-2P-7SO" id="S98-KL-iRj"/>
                         <outlet property="roomNameText" destination="AFT-i4-VwL" id="J0V-fD-Je0"/>
                         <outlet property="tableView" destination="o8g-Gg-bkL" id="fUs-sQ-e3f"/>
                     </connections>
