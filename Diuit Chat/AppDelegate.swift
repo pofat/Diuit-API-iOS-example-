@@ -19,15 +19,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // init DUMessaging
+        /**
+            Setup your Diuit API app id and add key here.
+         */
         DUMessaging.setAppId("test", appKey: "123")
-        // Fabric
+
+        
+        // Other setup
         Fabric.with([Crashlytics.self])
-        // customize progress hud
+        
         SVProgressHUD.setDefaultStyle(.Light)
         SVProgressHUD.setDefaultMaskType(.Black)
         SVProgressHUD.setMinimumDismissTimeInterval(NSTimeInterval(0.3))
-        // push
+        // Push setup
         let notificationTypes: UIUserNotificationType = [.Alert, .Badge, .Sound]
         let pushNotificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: nil)
         application.registerUserNotificationSettings( pushNotificationSettings)
@@ -36,7 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application( application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData ) {
-        // update push token
+        /**
+            Update your push token, so that your device can receive push notification
+         */
         DUMessaging.setPushTokenFromData(deviceToken) { error, result in
             guard error == nil else {
                 print(error!.localizedDescription)

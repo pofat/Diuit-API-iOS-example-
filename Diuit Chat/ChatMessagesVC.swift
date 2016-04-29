@@ -13,8 +13,11 @@ import SDWebImage
 import SVProgressHUD
 import DUMessaging
 
+/**
+    Display and send out messages.
+ */
 class ChatMessagesVC: JSQMessagesViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    /// Current chat room
     var chat: DUChat!
 
     private var messages = [Message]()

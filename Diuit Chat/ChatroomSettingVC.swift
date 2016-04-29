@@ -10,6 +10,13 @@ import UIKit
 import DUMessaging
 import SVProgressHUD
 
+/**
+    This view controller displays information of a chat room and you can do:
+ 
+    - Edit chat room name: This value is saved in meta with key "name"
+    - Kick user
+ 
+ */
 class ChatroomSettingVC: UIViewController {
 
     @IBOutlet var idLabel: UILabel!
@@ -22,7 +29,7 @@ class ChatroomSettingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        // table view setup
         self.tableView.allowsSelection = false
         self.tableView.separatorStyle = .None
         

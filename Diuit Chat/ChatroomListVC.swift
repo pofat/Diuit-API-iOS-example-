@@ -9,17 +9,29 @@
 import UIKit
 import DUMessaging
 
+/**
+    This view controller display all chat rooms of current user.
+ */
 class ChatroomListVC: UIViewController {
 
     @IBOutlet var tableView: UITableView!
     
+    /**
+        Register NSNotification obseerver to receive real time message from Diuit API server.
+     */
     func registerMessageObserver() {
         NSNotificationCenter.defaultCenter().addObserverForName("messageReceived", object: nil, queue: NSOperationQueue.mainQueue()) { notif in
             let message = notif.userInfo!["message"] as! DUMessage
-            NSLog("Got new message #\(message.id):\(message.data!)\nfrom chat #\(message.chat!.id)")
+            print("Got new message #\(message.id):\(message.data!)\nfrom chat #\(message.chat!.id)")
+            User.refreshChats() { error in
+                if error != nil {
+                    dispatch_async(dispatch_get_main_queue(), { self.tableView.reloadData() })
+                }
+            }
+            /*
             let targetChat = self.findChatWith(message.chat!.id)
             guard targetChat != nil else {
-                NSLog("can't find chatroom of received message")
+                print("can't find chatroom of received message")
                 return
             }
             // if system message
@@ -34,6 +46,7 @@ class ChatroomListVC: UIViewController {
                 targetChat.lastMessage = message
                 self.tableView.reloadData()
             }
+ */
         }
     }
     
@@ -41,7 +54,6 @@ class ChatroomListVC: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showChatroomSegue" {
-            //let vc = segue.destinationViewController as! ChatroomVC
             let vc = segue.destinationViewController as! ChatMessagesVC
             vc.chat = User.chats[(self.tableView?.indexPathForSelectedRow?.row)!]
         }
@@ -69,6 +81,13 @@ class ChatroomListVC: UIViewController {
     }
     
     // MARK: private helper
+    /**
+        To find trage chat room from current user's chat room list by room id. Return matched instance of DUChat or nil, if not found.
+        
+        - parameters:
+            - id Chat room id
+     
+     */
     private func findChatWith(id: Int) -> DUChat? {
         
         for chat: DUChat in User.chats {
@@ -80,6 +99,7 @@ class ChatroomListVC: UIViewController {
     }
 }
 
+// MARK: UITableView Data Source
 extension ChatroomListVC: UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return User.chats.count
@@ -94,10 +114,8 @@ extension ChatroomListVC: UITableViewDataSource {
             c.textLabel?.text = "Room \(chat.id)"
         }
 
-        if chat.lastMessage?.mime == "text/plain" {
-            c.detailTextLabel?.text = chat.lastMessage?.data
-        } else if chat.lastMessage != nil {
-            c.detailTextLabel?.text = ""
+        if let lastMessage = chat.lastMessage {
+            c.detailTextLabel?.text = lastMessage.createdAt!.messageTimeLabelString
         } else {
             c.detailTextLabel?.text = ""
         }
@@ -105,6 +123,7 @@ extension ChatroomListVC: UITableViewDataSource {
     }
 }
 
+// MARK: UITableView Delegate
 extension ChatroomListVC: UITableViewDelegate {
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if DUMessaging.currentUser != nil {
@@ -112,20 +131,5 @@ extension ChatroomListVC: UITableViewDelegate {
         } else {
             return "Chatrooms"
         }
-    }
-}
-
-extension String {
-    func parseJSONString() -> [String: AnyObject] {
-        if let data = self.dataUsingEncoding(NSUTF8StringEncoding){
-            do{
-                if let dictionary = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as? [String: AnyObject]{
-                    return dictionary
-                }
-            }catch {
-                print("error")
-            }
-        }
-        return [String: AnyObject]()
     }
 }

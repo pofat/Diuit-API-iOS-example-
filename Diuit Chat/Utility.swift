@@ -70,7 +70,7 @@ class Utility: NSObject {
 
 // MARK: String extension
 extension String {
-    
+    // subscription
     subscript (i: Int) -> Character {
         return self[self.startIndex.advancedBy(i)]
     }
@@ -84,7 +84,7 @@ extension String {
         let end = start.advancedBy(r.endIndex - r.startIndex)
         return self[Range(start ..< end)]
     }
-    
+    // validator
     func isValidUsername() -> Bool {
         let pattern = "^[a-z0-9_]{3,16}$"
         let test = NSPredicate(format: "SELF MATCHES %@", pattern)
@@ -104,6 +104,19 @@ extension String {
         let test = NSPredicate(format: "SELF MATCHES %@", pattern)
         
         return test.evaluateWithObject(self)
+    }
+    // JSON parser
+    func parseJSONString() -> [String: AnyObject] {
+        if let data = self.dataUsingEncoding(NSUTF8StringEncoding){
+            do{
+                if let dictionary = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as? [String: AnyObject]{
+                    return dictionary
+                }
+            }catch {
+                print("error")
+            }
+        }
+        return [String: AnyObject]()
     }
 }
 
@@ -138,5 +151,35 @@ extension NSURL {
         let idRange = absoluePath.rangeOfString("id=")
         let extRange = absoluePath.rangeOfString("&ext=")
         return absoluePath.substringWithRange(idRange!.endIndex..<extRange!.startIndex)
+    }
+}
+
+extension NSDate {
+    var messageTimeLabelString: String {
+        get {
+            let cal = NSCalendar.currentCalendar()
+            var components = cal.components([.Era, .Year, .Month, .Day], fromDate: NSDate())
+            let currentYear = components.year
+            let today = cal.dateFromComponents(components)!
+            components = cal.components([.Era, .Year, .Month, .Day], fromDate: self)
+            let thisYear = components.year
+            let thisDate = cal.dateFromComponents(components)!
+            
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.locale = NSLocale.currentLocale()
+            if today.isEqualToDate(thisDate) { // today, print out time
+                dateFormatter.dateStyle = .NoStyle
+                dateFormatter.timeStyle = .ShortStyle
+            } else { // not today, print out date
+                if thisYear == currentYear {
+                    dateFormatter.dateFormat = "MMM dd"
+                } else {
+                    dateFormatter.dateStyle = .ShortStyle
+                    dateFormatter.timeStyle = .NoStyle
+                }
+            }
+            
+            return dateFormatter.stringFromDate(self)
+        }
     }
 }

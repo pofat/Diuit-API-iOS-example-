@@ -10,13 +10,16 @@ import UIKit
 import DUMessaging
 import SVProgressHUD
 
+/**
+    You can create a new chat room with any other users or join a specific room with id. To create a new chat room, you can query by user name to check if such username exists.
+ */
 class ChooserUserVC: UIViewController {
     @IBOutlet var otherUsername: UITextField!
     @IBOutlet var chatRoomId: UITextField!
     @IBOutlet var usersTextView: UITextView!
     @IBOutlet var createBtn: UIBarButtonItem!
     
-    private var userArray:[String: String] = [String:String]()
+    private var userArray:[String: String] = [String:String]() // users to be joined in newly create room
     private var isCreateChat = true
     
     @IBAction func createOrJoinChat() {

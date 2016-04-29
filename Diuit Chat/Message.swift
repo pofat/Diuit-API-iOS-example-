@@ -11,18 +11,15 @@ import DUMessaging
 import JSQMessagesViewController
 import SDWebImage
 
+/**
+    This class is to make DUMessage instances conform to JSQMessageData protocol
+ */
 class Message: NSObject, JSQMessageData {
+    /// The oirignal DUMessage instance from Diuit API server
     let originMessage: DUMessage
     let mediaItem: JSQMediaItem
     var senderSerial: String
     var senderName: String
-    /*
-    var senderSerial: String
-    var senderName: String
-    var _date: NSDate
-    var data: String?
-    var mime: String
- */
     
     init(message:DUMessage) {
         self.originMessage = message
@@ -39,7 +36,7 @@ class Message: NSObject, JSQMessageData {
             } else {
                 self.senderName = sender.serial
             }
-        } else { // message from system
+        } else { // XXX: system messages have no sender value
             self.senderSerial = "System"
             self.senderName = "System"
         }

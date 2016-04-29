@@ -14,11 +14,6 @@ class SignUpVC: UIViewController {
     @IBOutlet var email: UITextField!
     @IBOutlet var password: UITextField!
     @IBOutlet var passwordRepeat: UITextField!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)

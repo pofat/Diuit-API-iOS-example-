@@ -119,19 +119,12 @@
 		FA04E7271CB6AA0E001F847F /* Diuit Chat */ = {
 			isa = PBXGroup;
 			children = (
+				FA835EA81CD337DE0014908E /* Models */,
+				FA835EA71CD337A80014908E /* Controllers */,
 				FA04E7481CB6AA72001F847F /* Resources */,
 				FA04E7281CB6AA0E001F847F /* AppDelegate.swift */,
 				FA04E7341CB6AA0E001F847F /* Info.plist */,
-				FA04E74B1CB6AABD001F847F /* LoginVC.swift */,
-				FA04E74D1CB6AABD001F847F /* ChatroomListVC.swift */,
-				FA04E74E1CB6AABD001F847F /* ChatroomSettingVC.swift */,
-				FA04E74F1CB6AABD001F847F /* ChooserUserVC.swift */,
-				FA0DC0101CBD1A75006E7FE1 /* ReportContentVC.swift */,
-				FA80BE931CB94543006FDC71 /* ChatMessagesVC.swift */,
-				FA0DC00E1CBCDA47006E7FE1 /* SignUpVC.swift */,
-				FA04E7501CB6AABD001F847F /* User.swift */,
 				FA04E7511CB6AABD001F847F /* Utility.swift */,
-				FA80BE961CB94607006FDC71 /* Message.swift */,
 			);
 			path = "Diuit Chat";
 			sourceTree = "<group>";
@@ -153,6 +146,29 @@
 				FA04E7311CB6AA0E001F847F /* LaunchScreen.storyboard */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		FA835EA71CD337A80014908E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA04E74B1CB6AABD001F847F /* LoginVC.swift */,
+				FA04E74D1CB6AABD001F847F /* ChatroomListVC.swift */,
+				FA04E74E1CB6AABD001F847F /* ChatroomSettingVC.swift */,
+				FA04E74F1CB6AABD001F847F /* ChooserUserVC.swift */,
+				FA0DC0101CBD1A75006E7FE1 /* ReportContentVC.swift */,
+				FA80BE931CB94543006FDC71 /* ChatMessagesVC.swift */,
+				FA0DC00E1CBCDA47006E7FE1 /* SignUpVC.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		FA835EA81CD337DE0014908E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA04E7501CB6AABD001F847F /* User.swift */,
+				FA80BE961CB94607006FDC71 /* Message.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
