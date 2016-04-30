@@ -19,7 +19,7 @@ To build this app, you need:
 You can either use our demo server to experience all features in a second or use your own server. The main goal of the server is to provide an authentication for your device and response a corresponding session token, which is from Diuit API server.
 
 * If you want to try with our demo server:
-	1. Please [contact us](mailto:pofattseng@diuit.com)
+	1. Please [contact us](mailto:pofattseng@diuit.com) to get demo server address.
 	2. Replace value of `_serverUrl` in Utility.swift with our demo server url.
 	3. Sign in two account on two different devices (or simulators).
 	4. Create a new chat room or join any existed room.
