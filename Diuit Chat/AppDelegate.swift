@@ -9,8 +9,6 @@
 import UIKit
 import SVProgressHUD
 import DUMessaging
-import Fabric
-import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,8 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         
         // Other setup
-        Fabric.with([Crashlytics.self])
-        
         SVProgressHUD.setDefaultStyle(.Light)
         SVProgressHUD.setDefaultMaskType(.Black)
         SVProgressHUD.setMinimumDismissTimeInterval(NSTimeInterval(0.3))
